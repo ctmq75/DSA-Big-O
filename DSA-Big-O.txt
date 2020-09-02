@@ -1,0 +1,42 @@
+1. 1-Constant time O(1)
+    2- Linear time O(n)
+
+2. 0(1) - constant
+
+3. Polynomial time- 0(n^2)
+
+4. 0(n)
+
+5. 0(n) - one nested loop with an iteration
+
+6. 0(n^2) - 2 nested loops
+
+7. 0(n) one nested loop with .push() method
+
+8. O(log(n))- index shrinks after each iteration
+
+9. 0(1)
+
+10. 0(n)- checking for prime number
+
+11. 
+const towerOfHanoi = (height, sourceRod, destinationRod, auxRod) => {
+    // base case - all the disks have been moved
+    if (height === 0) {
+      return;
+    }
+    // recursive case - there are disks on the peg
+    towerOfHanoi(height - 1, sourceRod, auxRod, destinationRod);
+    console.log(`Move disk from ${sourceRod} to ${destinationRod}`);
+    towerOfHanoi(height - 1, auxRod, destinationRod, sourceRod);
+  };
+  
+  // Function call:
+  console.log(`\n3 disks:`);
+  towerOfHanoi(3, "A", "C", "B");
+  
+  console.log(`\n4 disks:`);
+  towerOfHanoi(4, "A", "C", "B");
+  
+  console.log(`\n5 disks:`);
+  towerOfHanoi(5, "A", "C", "B");
